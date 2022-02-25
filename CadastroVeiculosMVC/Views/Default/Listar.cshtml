@@ -1,0 +1,19 @@
+﻿@Model List<CadastroVeiculosMVC.Models.Veiculo>
+    @{
+        ViewBag.Title = "Listar";
+    }
+    @TempData["msg"]
+    <h2>Listar Veiculos</h2>
+    @if (Model != null)
+    {
+           <ul>
+               @foreach (CadastroVeiculosMVC.Models.Veiculo v in Model)
+               {
+                   <li>
+                       Placa: @v.Placa    |    Modelo: @v.Modelo <a href="~/Default/Excluir/@v.Placa">Excluir</a>
+                   </li>
+               }
+           </ul>
+    }
+
+
